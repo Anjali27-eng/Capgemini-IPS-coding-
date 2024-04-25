@@ -1,0 +1,35 @@
+import java.util.Scanner;
+class Lift{
+public static void main (siring[] args) {
+
+int a = 1 ,int=7 , n ,Call;
+
+Scanner sc = new Scanner(System.in);
+
+system.out.println ("Enter the test case");
+
+n = sc.nextInt();
+while (n!=0){
+
+system.out.println ("Enter the test case");
+
+call =sc.nextInt();
+)
+if (math.abs (call-a) < = math.abs(call-b)){
+
+system.out.println ("A");
+a=call;
+}
+
+else
+
+{
+
+system.out.println ("B");
+b=call;
+}
+n--;
+}
+}
+}
+
