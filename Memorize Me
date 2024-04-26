@@ -54,37 +54,48 @@ np
 import java.util.*;
 
 public class MemoryGame {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Input N - total number of numbers shown to the team
+        // Read the number of numbers shown to the team
         int N = scanner.nextInt();
-
-        // Input the N numbers
+        
+        // Read the array of numbers shown to the team
         int[] numbers = new int[N];
         for (int i = 0; i < N; i++) {
             numbers[i] = scanner.nextInt();
         }
-
-        // Input Q - total number of queries
+        
+        // Read the number of queries
         int Q = scanner.nextInt();
-
-        // Input the queries and count occurrences
-        for (int i = 0; i < Q; i++) {
+        
+        // Read each query and process it
+        for (int q = 0; q < Q; q++) {
             int query = scanner.nextInt();
-            int count = 0;
-            for (int j = 0; j < N; j++) {
-                if (numbers[j] == query) {
-                    count++;
-                }
-            }
-            if (count == 0) {
-                System.out.println("NOT PRESENT");
-            } else {
+            
+            // Count occurrences of the query in the numbers array
+            int count = countOccurrences(numbers, query);
+            
+            // Output the result or "NOT PRESENT"
+            if (count > 0) {
                 System.out.println(count);
+            } else {
+                System.out.println("np");
             }
         }
-
+        
         scanner.close();
+    }
+
+    // Helper method to count occurrences of a number in an array
+    private static int countOccurrences(int[] arr, int target) {
+        int count = 0;
+        for (int num : arr) {
+            if (num == target) {
+                count++;
+            }
+        }
+        return count;
     }
 }
